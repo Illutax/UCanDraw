@@ -1,2 +1,2 @@
 # UCanDraw
-it is best application for draw
+An simple draw-helping AR-App as a part of an university project.
