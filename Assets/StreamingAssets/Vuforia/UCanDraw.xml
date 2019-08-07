@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
-  <Tracking>
-    <ImageTarget name="IMG_4413" size="0.400000 0.400000" />
-    <ImageTarget name="din4apapier" size="0.400000 0.300000" />
-    <ImageTarget name="karte" size="0.150000 0.203627" />
-    <ImageTarget name="Haus_des_Nikolaus" size="0.150000 0.252985" />
-  </Tracking>
-</QCARConfig>
