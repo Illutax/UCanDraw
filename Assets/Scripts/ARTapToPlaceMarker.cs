@@ -23,6 +23,11 @@ public class ARTapToPlaceMarker : MonoBehaviour
     {
         UpdatePlacementpose();
         UpdatePlacementIndicator();
+
+        if (placementPoseIsValid && Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
+        {
+            //PlaceObject();
+        }
     }
 
     private void UpdatePlacementIndicator()
@@ -46,11 +51,15 @@ public class ARTapToPlaceMarker : MonoBehaviour
 
         arraycastManager.Raycast(screenCenter, hits, UnityEngine.XR.ARSubsystems.TrackableType.Planes);
 
-        placementPoseIsValid = hits.Count > 1;
+        placementPoseIsValid = hits.Count > 0;
 
         if (placementPoseIsValid)
         {
             placementPose = hits[0].pose;
+
+            var cameraForward = Camera.current.transform.forward;
+            var cameraBearing = new Vector3(cameraForward.x, 0, cameraForward.z).normalized;
+            placementPose.rotation = Quaternion.LookRotation(cameraBearing);
         }
 
     }
