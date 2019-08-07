@@ -163,9 +163,9 @@ PlayerSettings:
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
-    Android: com.uhh.mci-praktikum.ucandraw
-    Standalone: com.uhh.mci-praktikum.ucandraw
-    iPhone: com.uhh.mci-praktikum.ucandraw
+    Android: com.uhh.mci.praktikum.ucandraw
+    Standalone: com.uhh.mci.praktikum.ucandraw
+    iPhone: com.uhh.mci.praktikum.ucandraw
   buildNumber:
     iPhone: 0
   AndroidBundleVersionCode: 1
