@@ -39,10 +39,8 @@ public class ARTapToPlaceMarker : MonoBehaviour
     private void PlaceObject()
     {
         GameObject gm = Instantiate(objectToPlace, placementPose.position, placementPose.rotation);
-        if (!gameManager.AddMarker(gm))
-        {
-            Destroy(gm);
-        }
+        gameManager.AddMarker(gm);
+
     }
 
     private void UpdatePlacementIndicator()
