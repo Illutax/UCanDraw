@@ -15,10 +15,13 @@ public class ARTapToPlaceMarker : MonoBehaviour
 
     public GameObject objectToPlace;
 
+    _GM gameManager;
+
 
     void Start()
     {
         arOrigin = FindObjectOfType<ARSessionOrigin>();
+        gameManager = FindObjectOfType<_GM>();
     }
 
    
@@ -35,7 +38,11 @@ public class ARTapToPlaceMarker : MonoBehaviour
 
     private void PlaceObject()
     {
-        Instantiate(objectToPlace, placementPose.position, placementPose.rotation);
+        GameObject gm = Instantiate(objectToPlace, placementPose.position, placementPose.rotation);
+        if (!gameManager.AddMarker(gm))
+        {
+            Destroy(gm);
+        }
     }
 
     private void UpdatePlacementIndicator()

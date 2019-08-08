@@ -666,8 +666,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arraycastManager: {fileID: 857482888}
-  placementIndicator: {fileID: 0}
-  objectToPlace: {fileID: 0}
+  placementIndicator: {fileID: 484260108}
+  objectToPlace: {fileID: 1909343761058238168, guid: 204096999a6994bc296c2866b121506f,
+    type: 3}
 --- !u!114 &857482888
 MonoBehaviour:
   m_ObjectHideFlags: 0
