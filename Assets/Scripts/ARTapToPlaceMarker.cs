@@ -13,6 +13,9 @@ public class ARTapToPlaceMarker : MonoBehaviour
     private Pose placementPose;
     private bool placementPoseIsValid = false;
 
+    public GameObject objectToPlace;
+
+
     void Start()
     {
         arOrigin = FindObjectOfType<ARSessionOrigin>();
@@ -26,8 +29,13 @@ public class ARTapToPlaceMarker : MonoBehaviour
 
         if (placementPoseIsValid && Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
         {
-            //PlaceObject();
+            PlaceObject();
         }
+    }
+
+    private void PlaceObject()
+    {
+        Instantiate(objectToPlace, placementPose.position, placementPose.rotation);
     }
 
     private void UpdatePlacementIndicator()
@@ -59,7 +67,7 @@ public class ARTapToPlaceMarker : MonoBehaviour
 
             var cameraForward = Camera.current.transform.forward;
             var cameraBearing = new Vector3(cameraForward.x, 0, cameraForward.z).normalized;
-            placementPose.rotation = Quaternion.LookRotation(cameraBearing);
+            placementPose.rotation = Quaternion.LookRotation(cameraBearing); 
         }
 
     }
