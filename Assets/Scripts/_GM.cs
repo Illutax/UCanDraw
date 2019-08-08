@@ -22,9 +22,14 @@ public class _GM : MonoBehaviour
         DontDestroyOnLoad(this);
     }
 
-    void ResetMarker()
+    void ResetMarkers ()
     {
-        markers = new List<GameObject>();
+        foreach (var marker in markers)
+        {
+            Destroy(marker);
+        }
+
+        markers.Clear();
     }
 
     void SetDrawPlane()
@@ -43,8 +48,7 @@ public class _GM : MonoBehaviour
         drawArea.transform.position = sum;
         drawArea.SetActive(true);
 
-        ResetMarker();
-
+        ResetMarkers();
     }
 
     public void AddMarker(GameObject marker)
