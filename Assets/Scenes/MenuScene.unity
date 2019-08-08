@@ -363,8 +363,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 547528386}
-  - component: {fileID: 547528388}
   - component: {fileID: 547528387}
+  - component: {fileID: 547528388}
   m_Layer: 0
   m_Name: _GM
   m_TagString: Untagged
@@ -408,13 +408,6 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 35d99111020a8804ab782aff918a0d2b, type: 3}
   - {fileID: 21300000, guid: 1659c6b8a36baa445bfb84c2505ea73b, type: 3}
   anzeigeBild: {fileID: 43020634}
-  materials:
-  - {fileID: 2100000, guid: 0b5e17f5c27f542af908cb3b26a48ccb, type: 2}
-  - {fileID: 2100000, guid: 1f12acda4749e409faf510960e1bea1e, type: 2}
-  - {fileID: 2100000, guid: 0a6f09f17728f490b86f766276f809bf, type: 2}
-  - {fileID: 2100000, guid: 3c4d90d6fe2fd497f968db479a0c0ecb, type: 2}
-  - {fileID: 2100000, guid: 9bcc959f3fac345409bff79975ee6868, type: 2}
-  - {fileID: 2100000, guid: 6b4048411ab024594a46a29b15f84587, type: 2}
 --- !u!114 &547528388
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -428,6 +421,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bildIndex: 0
+  drawArea: {fileID: 638656633669877838, guid: bec99c2cfd29c3d45ab33477146f9aff, type: 3}
+  materials:
+  - {fileID: 2100000, guid: 0b5e17f5c27f542af908cb3b26a48ccb, type: 2}
+  - {fileID: 2100000, guid: 1f12acda4749e409faf510960e1bea1e, type: 2}
+  - {fileID: 2100000, guid: 0a6f09f17728f490b86f766276f809bf, type: 2}
+  - {fileID: 2100000, guid: 3c4d90d6fe2fd497f968db479a0c0ecb, type: 2}
+  - {fileID: 2100000, guid: 9bcc959f3fac345409bff79975ee6868, type: 2}
+  - {fileID: 2100000, guid: 6b4048411ab024594a46a29b15f84587, type: 2}
 --- !u!1 &814994865
 GameObject:
   m_ObjectHideFlags: 0
@@ -883,11 +884,6 @@ PrefabInstance:
       propertyPath: m_Text
       value: Settings
       objectReference: {fileID: 0}
-    - target: {fileID: 534496424199298063, guid: 49efd0e6db90e834a91b53cd772f8a83,
-        type: 3}
-      propertyPath: m_Color.a
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8975766448320168199, guid: 49efd0e6db90e834a91b53cd772f8a83,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -921,6 +917,11 @@ PrefabInstance:
     - target: {fileID: 8975766448320168199, guid: 49efd0e6db90e834a91b53cd772f8a83,
         type: 3}
       propertyPath: m_Interactable
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 534496424199298063, guid: 49efd0e6db90e834a91b53cd772f8a83,
+        type: 3}
+      propertyPath: m_Color.a
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -2338,11 +2339,6 @@ PrefabInstance:
       propertyPath: m_Text
       value: About us
       objectReference: {fileID: 0}
-    - target: {fileID: 534496424199298063, guid: 49efd0e6db90e834a91b53cd772f8a83,
-        type: 3}
-      propertyPath: m_Color.a
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8975766448320168199, guid: 49efd0e6db90e834a91b53cd772f8a83,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -2372,6 +2368,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 534496424199298063, guid: 49efd0e6db90e834a91b53cd772f8a83,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 49efd0e6db90e834a91b53cd772f8a83, type: 3}
@@ -3196,11 +3197,6 @@ PrefabInstance:
       propertyPath: m_Text
       value: Choose motive
       objectReference: {fileID: 0}
-    - target: {fileID: 534496424199298063, guid: 49efd0e6db90e834a91b53cd772f8a83,
-        type: 3}
-      propertyPath: m_Color.a
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8975766448320168199, guid: 49efd0e6db90e834a91b53cd772f8a83,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -3230,6 +3226,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 534496424199298063, guid: 49efd0e6db90e834a91b53cd772f8a83,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 49efd0e6db90e834a91b53cd772f8a83, type: 3}

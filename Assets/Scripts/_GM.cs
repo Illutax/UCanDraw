@@ -11,6 +11,7 @@ public class _GM : MonoBehaviour
     Material[] materials = new Material[6];
 
     List<GameObject> markers = new List<GameObject>();
+    GameObject temporaryObject;
 
     bool markersSet
     {
@@ -50,25 +51,26 @@ public class _GM : MonoBehaviour
 
 
         //TODO add rotation calculation according to the markers
-        var cameraForward = Camera.current.transform.forward;
+        var cameraForward = Camera.main.transform.forward;
         var cameraBearing = new Vector3(cameraForward.x, 0, cameraForward.z).normalized;
 
-        drawArea.transform.position = sum;
-        drawArea.transform.rotation = Quaternion.LookRotation(cameraBearing);
+        temporaryObject = Instantiate(drawArea);
+        temporaryObject.transform.position = sum;
+        temporaryObject.transform.rotation = Quaternion.LookRotation(cameraBearing);
 
         //TODO add resizing according to markers
-        drawArea.SetActive(true);
+        temporaryObject.SetActive(true);
 
         ResetMarkers();
     }
 
     public void AddMarker(GameObject marker)
     {
-
         markers.Add(marker);
 
         if (markersSet)
         {
+            Destroy(temporaryObject);
             SetDrawPlane();
         }
     }
@@ -76,6 +78,10 @@ public class _GM : MonoBehaviour
     public void SetPictureToDraw(int sender)
     {
         bildIndex = sender;
+
+        Debug.Log("Update Material");
+        Debug.Log(bildIndex);
+        Debug.Log(materials);
         drawArea.GetComponentInChildren<MeshRenderer>().material = materials[bildIndex];
     }
 }
