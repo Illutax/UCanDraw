@@ -7,12 +7,13 @@ public class _GM : MonoBehaviour
     [SerializeField]
     GameObject drawArea;
 
-    GameObject[] markers = new GameObject[4];
+    List<GameObject> markers = new List<GameObject>();
+
     bool markersSet
     {
         get
         {
-            return markers.Length == 4;
+          return markers.Count == 4;
         }
     }
 
@@ -21,29 +22,43 @@ public class _GM : MonoBehaviour
         DontDestroyOnLoad(this);
     }
 
-    void FixedUpdate()
+    void ResetMarker()
     {
-        if (markersSet)
-        {
-
-            Vector3 sum = Vector3.zero;
-            foreach(var v in markers){
-                sum += v.transform.position;
-            }
-            sum /= 4;
-            drawArea.transform.position = sum;
-            drawArea.SetActive(true);
-        }
+        markers = new List<GameObject>();
     }
 
-    public bool AddMarker(GameObject marker)
+    void SetDrawPlane()
     {
-        if (!markersSet)
-        {
-            markers[markers.Length] = marker;
-            return true;
-        }
+        Debug.Log("Draw Plane");
+        Debug.Log(markers);
 
-        return false;
+        Vector3 sum = Vector3.zero;
+
+        foreach (var v in markers)
+        {
+            sum += v.transform.position;
+        }
+        sum /= 4;
+
+        drawArea.transform.position = sum;
+        drawArea.SetActive(true);
+
+        ResetMarker();
+
+    }
+
+    public void AddMarker(GameObject marker)
+    {
+        Debug.Log(markers);
+        if (markersSet)
+        {
+            SetDrawPlane();
+        }
+        else
+        {
+            markers.Add(marker);
+            Debug.Log("updated Marker");
+            Debug.Log(marker);
+        }
     }
 }
