@@ -49,16 +49,12 @@ public class _GM : MonoBehaviour
 
     public void AddMarker(GameObject marker)
     {
-        Debug.Log(markers);
+
+        markers.Add(marker);
+
         if (markersSet)
         {
             SetDrawPlane();
-        }
-        else
-        {
-            markers.Add(marker);
-            Debug.Log("updated Marker");
-            Debug.Log(marker);
         }
     }
 }
