@@ -15,8 +15,6 @@ public class MenuManager : MonoBehaviour
     [SerializeField]
     public Image anzeigeBild;
 
-    public Material[] materials = new Material[6];
-
     private _GM gameManager;
 
     // Start is called before the first frame update
