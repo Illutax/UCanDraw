@@ -13,6 +13,8 @@ public class _GM : MonoBehaviour
     List<GameObject> markers = new List<GameObject>();
     GameObject temporaryObject;
 
+    public bool planeSet;
+
     bool markersSet
     {
         get
@@ -24,9 +26,10 @@ public class _GM : MonoBehaviour
     void Awake()
     {
         DontDestroyOnLoad(this);
+        planeSet = false;
     }
 
-    void ResetMarkers ()
+    public void ResetMarkers ()
     {
         foreach (var marker in markers)
         {
@@ -34,6 +37,7 @@ public class _GM : MonoBehaviour
         }
 
         markers.Clear();
+        planeSet = false;
     }
 
     void SetDrawPlane()
@@ -72,6 +76,7 @@ public class _GM : MonoBehaviour
         {
             Destroy(temporaryObject);
             SetDrawPlane();
+            planeSet = true;
         }
     }
 
