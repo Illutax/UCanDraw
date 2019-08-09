@@ -41,6 +41,9 @@ public class ARTapToPlaceMarker : MonoBehaviour
 
     private void PlaceObject()
     {
+        if (gameManager.planeSet)
+            return;
+
         System.Random rnd = new System.Random();
         GameObject gm;
         if (placementPoseIsValid)
@@ -56,7 +59,7 @@ public class ARTapToPlaceMarker : MonoBehaviour
 
     private void UpdatePlacementIndicator()
     {
-       if (placementPoseIsValid)
+       if (placementPoseIsValid && !gameManager.planeSet)
         {
             placementIndicator.SetActive(true);
             placementIndicator.transform.SetPositionAndRotation(placementPose.position, placementPose.rotation);
