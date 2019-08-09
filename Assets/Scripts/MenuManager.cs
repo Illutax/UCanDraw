@@ -8,6 +8,7 @@ using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour
 {
+    public GameObject hamburgerMenu;
     public GameObject auswahlPanel;
     public GameObject confirmPanel;
     [SerializeField]
@@ -20,6 +21,7 @@ public class MenuManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        hamburgerMenu.SetActive(false);
         auswahlPanel.SetActive(false);
         confirmPanel.SetActive(false);
         gameManager = FindObjectOfType<_GM>();
@@ -68,6 +70,9 @@ public class MenuManager : MonoBehaviour
     }
 
 
-
+    public void ToggleHamburgerMenu()
+    {
+        hamburgerMenu.SetActive(!hamburgerMenu.activeSelf);
+    }
 
 }
