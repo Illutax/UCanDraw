@@ -21,7 +21,6 @@ public class MenuManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        hamburgerMenu.SetActive(false);
         auswahlPanel.SetActive(false);
         confirmPanel.SetActive(false);
         gameManager = FindObjectOfType<_GM>();
@@ -73,6 +72,11 @@ public class MenuManager : MonoBehaviour
     public void ToggleHamburgerMenu()
     {
         hamburgerMenu.SetActive(!hamburgerMenu.activeSelf);
+    }
+
+    public void SetPictureToDraw(int index)
+    {
+        gameManager.SetPictureToDraw(index);
     }
 
 }
