@@ -76,7 +76,7 @@ public class ARTapToPlaceMarker : MonoBehaviour
         var screenCenter = Camera.current.ViewportToScreenPoint(new Vector3(0.5f, 0.5f));
         var hits = new List<ARRaycastHit>();
 
-        arraycastManager.Raycast(screenCenter, hits, UnityEngine.XR.ARSubsystems.TrackableType.Planes);
+        arraycastManager.Raycast(screenCenter, hits, UnityEngine.XR.ARSubsystems.TrackableType.All);
 
         placementPoseIsValid = hits.Count > 0;
 
