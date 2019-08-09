@@ -27,10 +27,13 @@ public class ARTapToPlaceMarker : MonoBehaviour
    
     void Update()
     {
-        UpdatePlacementpose();
-        UpdatePlacementIndicator();
+        if (Camera.current)
+        {
+            UpdatePlacementpose();
+            UpdatePlacementIndicator();
+        }
 
-        if (placementPoseIsValid && Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
+        if (Input.GetKeyDown(KeyCode.Space) || placementPoseIsValid && Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
         {
             PlaceObject();
         }
@@ -38,7 +41,15 @@ public class ARTapToPlaceMarker : MonoBehaviour
 
     private void PlaceObject()
     {
-        GameObject gm = Instantiate(objectToPlace, placementPose.position, placementPose.rotation);
+        System.Random rnd = new System.Random();
+        GameObject gm;
+        if (placementPoseIsValid)
+            gm = Instantiate(objectToPlace, placementPose.position, placementPose.rotation);
+        else
+        {
+            gm = Instantiate(objectToPlace);
+            gm.transform.position = new Vector3((float)rnd.NextDouble(), (float)rnd.NextDouble());
+        }
         gameManager.AddMarker(gm);
 
     }
